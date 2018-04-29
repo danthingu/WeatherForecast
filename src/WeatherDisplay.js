@@ -19,9 +19,6 @@ class WeatherDisplay extends Component {
             <div className="daily-weather-display">
                 <div className="text-center h5 pt-2">Daily</div>                
                 <div className="carousel">
-                {
-                            console.log('daily forecasts: ' + this.props.dailyForecasts)                    
-                }
                     <OwlCarousel ref={el => this.carousel = el} options={options}>
                         {
                             !!this.props.dailyForecasts && this.props.dailyForecasts.map((fc, i) => (

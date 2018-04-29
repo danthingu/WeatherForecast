@@ -13,6 +13,7 @@ weekday[6] = 'Sat';
 
 
 const getDate = (date) => {
+    console.log('data: ' + date);
     return `${weekday[date.getDay()]} ${date.getDate()}`;
 };
 

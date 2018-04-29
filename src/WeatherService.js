@@ -45,7 +45,24 @@ const getDailyWeather = (url) => {
 };
 
 class WeatherService {
-    getDailyWeatherByPosition(latitude, longitude) {
+    // getDailyWeatherByPosition(latitude, longitude) {
+    //     if (!latitude) {
+    //         throw Error('Latitude is required');
+    //     }
+
+    //     if (!longitude) {
+    //         throw Error('Longitude is required');
+    //     }
+
+    //     latitude = '38.5891';
+    //     longitude = '-121.3027';
+
+    //     const url = `${OPEN_WEATHER_BASE_URL}/forecast/daily?appid=${OPEN_WEATHER_API_KEY}&lat=${latitude}&lon=${longitude}&units=metric&cnt=7`;
+    //     console.log('url: ' + url);
+    //     return getDailyWeather(url);
+    // }
+
+    getDailyWeatherByPosition({latitude, longitude}) {
         if (!latitude) {
             throw Error('Latitude is required');
         }
@@ -54,8 +71,8 @@ class WeatherService {
             throw Error('Longitude is required');
         }
 
-        latitude = '38.5891';
-        longitude = '-121.3027';
+        // latitude = '38.5891';
+        // longitude = '-121.3027';
 
         const url = `${OPEN_WEATHER_BASE_URL}/forecast/daily?appid=${OPEN_WEATHER_API_KEY}&lat=${latitude}&lon=${longitude}&units=metric&cnt=7`;
         console.log('url: ' + url);
