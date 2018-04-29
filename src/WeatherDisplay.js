@@ -14,6 +14,20 @@ class WeatherDisplay extends Component {
         console.log("hello: " + this.props.dailyForecasts);
     }
 
+    renderWeather() {
+        if (this.props.dailyForecasts !== undefined) {
+                            
+            return (
+                !!this.props.dailyForecasts && this.props.dailyForecasts.map((fc, i) => (
+                    <DailyWeatherForecastCard forecast={fc} key={i} />
+                ))
+            )
+        }
+        else {
+            return <div>Empty</div>
+        }
+    }
+
     render() {
         return (
             <div className="daily-weather-display">
@@ -21,9 +35,7 @@ class WeatherDisplay extends Component {
                 <div className="carousel">
                     <OwlCarousel ref={el => this.carousel = el} options={options}>
                         {
-                            !!this.props.dailyForecasts && this.props.dailyForecasts.map((fc, i) => (
-                                <DailyWeatherForecastCard forecast={fc} key={i} />
-                            ))
+                            this.renderWeather()
                         }
                     </OwlCarousel>
                 </div>
